@@ -11,6 +11,7 @@ body {
 } 
 
 .container {
+    width: 80%;
     margin: auto;
     border: solid 0.2em #e8ecef;
     border-radius: 0.3em;
