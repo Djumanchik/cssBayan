@@ -1,0 +1,20 @@
+body {
+    max-width: 1920px;
+    margin: auto;
+    font-family: 'Tilt Warp';
+}
+
+*,
+*:before,
+*:after {
+    box-sizing: border-box;
+} 
+
+.container {
+    margin: auto;
+    border: solid 0.2em #e8ecef;
+    border-radius: 0.3em;
+    background-color: #f6f6ec;
+    padding: 3em 6em;
+
+}
