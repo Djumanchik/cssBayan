@@ -1,0 +1,261 @@
+body {
+    max-width: 1920px;
+    margin: auto;
+    font-family: 'Tilt Warp';
+}
+
+*,
+*:before,
+*:after {
+    box-sizing: border-box;
+} 
+
+img {
+    height: 20em;
+}
+
+.memPic {
+    display: block;
+    padding-top: 0.5em;
+    padding-left: 4em;
+    padding-right: 4em;
+    width: min-content;
+    margin: auto;
+    height: 0em;
+    transition: 1s;
+    overflow: hidden; /*скрытая картинка под слоем*/
+}
+
+.container {
+    width: 60%;
+    margin: 3em auto;
+    border: solid 0.2em #e8ecef;
+    border-radius: 0.3em;
+    background-color: #f6f6ec;
+    padding: 1em 6em;
+}
+
+.container:hover {
+    cursor: pointer;
+}
+
+.nameOfMemTitle {
+    color: #1667db;
+    cursor: pointer;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    flex-wrap: wrap;
+    flex-grow: 1;
+}
+.close-button {
+    width: 2em;
+    height: 2em;
+    color: #1667db;
+    cursor: pointer;
+    visibility: hidden;
+    rotate: 45deg;
+    transition: 0.5s;
+}
+
+@media (hover: hover) { /*фиксация hover только для десктопа*/
+    .container:hover .nameOfMemTitle {
+        color: black;
+    }
+    .nameOfMemTitle:hover { /*изменение заголовка по наведению*/
+        color: black;
+    }
+    .container:hover .close-button {
+        visibility:visible;
+        color: black;
+    }
+    .memInput:hover ~ .memPic { /*появление картинки по наведению*/
+        height: 21em;
+        transition: all 1s ease-out;
+    }
+    .memInput:hover ~ .close-button {
+        visibility:visible;
+        color: black;
+        rotate: 90deg;
+        transition: 0.5s;
+    }
+}
+
+.memInput {
+    width: 0;
+    height: 0;
+    appearance: none;
+    display: none;
+}
+
+.memInput:checked + p { /*изменение цвета заголовка по клику*/
+    color: black;
+}
+
+.memInput:checked ~ .memPic { /*появление картинки по клику*/
+    color: black;
+    display: block;
+    height: 21em;
+    transition: all 0.5s ease-out;
+}
+.memInput:checked ~ .close-button {
+    visibility: none;
+    color: black;
+    rotate: 90deg;
+    transition: 0.5s;
+}
+
+.nameOfMem {
+    border-top: #e8ecef solid;
+    padding-top: 0.7em;
+    padding-bottom: 0.7em;
+}
+
+@media (max-width: 1400px) {
+    h1 {
+        font-size: 20px;
+    }
+    p {
+        font-size: 16px;
+    }
+    img {
+        height: 16em;
+    }
+    .memPic {
+        padding-left: 80px;
+        padding-right: 80px;
+    }
+    .memInput:checked ~ .memPic { /*появление картинки по клику*/
+        color: black;
+        display: block;
+        height: 17em;
+        transition: all 0.5s ease-out;
+    }
+    .container {
+        width: 70%;
+        margin: 2em auto;
+        border: solid 0.2em #e8ecef;
+        border-radius: 0.3em;
+        background-color: #f6f6ec;
+        padding: 1em 3em;
+    }
+    .nameOfMem {
+        padding-top: 3px;
+        padding-bottom: 3px;
+    }
+}
+
+@media (max-width: 820px) {
+    h1 {
+        font-size: 20px;
+    }
+    p {
+        font-size: 10px;
+    }
+   
+    img {
+        height: 7em;
+    }
+    /* .close-button {
+        width: 60px;
+    } */
+    .memPic {
+        padding-left: 65px;
+        padding-right: 65px;
+    }
+    .memInput:checked ~ .memPic { /*появление картинки по клику*/
+        color: black;
+        display: block;
+        height: 8em;
+        transition: all 0.5s ease-out;
+    }
+    .container {
+        width: 75%;
+        margin: 2em auto;
+        border: solid 0.2em #e8ecef;
+        border-radius: 0.3em;
+        background-color: #f6f6ec;
+        padding: 1em 3em;
+    }
+    .nameOfMem {
+        padding-top: 1px;
+        padding-bottom: 1px;
+    }
+
+}
+
+@media (max-width: 550px) {
+    h1 {
+        font-size: 20px;
+    }
+    p {
+        font-size: 10px;
+    }
+   
+    img {
+        height: 6em;
+    }
+    .close-button{
+        display: none;
+    }
+    .memPic {
+        padding-left: 50px;
+        padding-right: 50px;
+    }
+    .memInput:checked ~ .memPic { /*появление картинки по клику*/
+        color: black;
+        display: block;
+        height: 7em;
+        transition: all 0.5s ease-out;
+    }
+    .container {
+        width: 90%;
+        margin: 2em auto;
+        border: solid 0.2em #e8ecef;
+        border-radius: 0.3em;
+        background-color: #f6f6ec;
+        padding: 1em 2em;
+    }
+    .nameOfMem {
+        padding-top: 1px;
+        padding-bottom: 1px;
+    }
+
+}
+
+@media (max-width: 320px) {
+    h1 {
+        font-size: 16px;
+    }
+    p {
+        font-size: 8px;
+    }
+    .close-button{
+        display: none;
+    }
+    img {
+        height: 5em;
+    }
+    .memPic {
+        padding-left: 10px;
+        padding-right: 10px;
+    }
+    .memInput:checked ~ .memPic { /*появление картинки по клику*/
+        color: black;
+        display: block;
+        height: 6em;
+        transition: all 0.5s ease-out;
+    }
+    .container {
+        width: 90%;
+        margin: 2em auto;
+        border: solid 0.2em #e8ecef;
+        border-radius: 0.3em;
+        background-color: #f6f6ec;
+        padding: 1em 3em;
+    }
+    .nameOfMem {
+        padding-top: 1px;
+        padding-bottom: 1px;
+    }
+}
