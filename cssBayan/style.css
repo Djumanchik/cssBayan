@@ -10,6 +10,10 @@ body {
     box-sizing: border-box;
 } 
 
+img {
+    height: 20em;
+}
+
 .container {
     width: 80%;
     margin: 3em auto;
@@ -27,40 +31,80 @@ body {
     color: #1667db;
     cursor: pointer;
 }
-
-.nameOfMemTitle:hover {
+.close-button {
+    box-sizing: content-box;
+    width: 1em;
+    height: 1em;
+    color: #1667db;
+    cursor: pointer;
+    visibility: hidden;
+}
+.container:hover .nameOfMemTitle {
     color: black;
-    transition: 0.5s;
-    display: block;
+}
+.container:hover .close-button {
+    visibility:visible;
+    color: black;
+}
+
+.wrap {
+    display: flex;
+    justify-content: space-between;
+}
+
+.nameOfMemTitle:hover { /*изменение заголовка по наведению*/
+    color: black;
+}
+
+.nameOfMemTitle:hover ~ .memPic { /*появление картинки по наведению*/
+    height: 21em;
+    transition: all 1s ease-out;
+}
+
+.nameOfMemTitle:hover ~ .close-button {
+    visibility:visible;
+    color: black;
+    rotate: 45deg;
+    transition: 1s;
 }
 
 .memInput {
     width: 0;
     height: 0;
     appearance: none;
-    position: absolute;
-}
-
-.memInput:checked + .memPic {
-    display: block;
-}
-
-.memPic {
-    width: min-content;
-    margin: auto;
     display: none;
 }
 
-img {
-    width: 20em;
+.memInput:checked ~ .nameOfMemTitle { /*изменение цвета заголовка по клику*/
+    color: black;
+}
+
+.memInput:checked ~ .memPic { /*появление картинки по клику*/
+    display: block;
+    height: 21em;
+    transition: all 1s ease-out;
+}
+.memInput:checked ~ .close-button {
+    visibility: visible;
+    color: black;
+    rotate: 45deg;
+    transition: 3s;
+}
+
+.memPic {
+    padding-top: 0.5em;
+    width: min-content;
+    margin: auto;
+    height: 0em;
+    transition: 1s;
+    overflow: hidden; /*скрытая картинка под слоем*/
 }
 
 .nameOfMem {
     border-top: #e8ecef solid;
     padding-top: 0.7em;
     padding-bottom: 0.7em;
+    /* display: flex;
+    justify-content: space-between; */
 }
 
-.memInput {
-    right: 0em
-}
