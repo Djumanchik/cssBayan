@@ -156,9 +156,12 @@ img {
     img {
         height: 7em;
     }
+    /* .close-button {
+        width: 60px;
+    } */
     .memPic {
-        padding-left: 80px;
-        padding-right: 80px;
+        padding-left: 65px;
+        padding-right: 65px;
     }
     .memInput:checked ~ .memPic { /*появление картинки по клику*/
         color: black;
@@ -167,12 +170,51 @@ img {
         transition: all 0.5s ease-out;
     }
     .container {
-        width: 80%;
+        width: 75%;
         margin: 2em auto;
         border: solid 0.2em #e8ecef;
         border-radius: 0.3em;
         background-color: #f6f6ec;
         padding: 1em 3em;
+    }
+    .nameOfMem {
+        padding-top: 1px;
+        padding-bottom: 1px;
+    }
+
+}
+
+@media (max-width: 550px) {
+    h1 {
+        font-size: 20px;
+    }
+    p {
+        font-size: 10px;
+    }
+   
+    img {
+        height: 6em;
+    }
+    .close-button{
+        display: none;
+    }
+    .memPic {
+        padding-left: 50px;
+        padding-right: 50px;
+    }
+    .memInput:checked ~ .memPic { /*появление картинки по клику*/
+        color: black;
+        display: block;
+        height: 7em;
+        transition: all 0.5s ease-out;
+    }
+    .container {
+        width: 90%;
+        margin: 2em auto;
+        border: solid 0.2em #e8ecef;
+        border-radius: 0.3em;
+        background-color: #f6f6ec;
+        padding: 1em 2em;
     }
     .nameOfMem {
         padding-top: 1px;
